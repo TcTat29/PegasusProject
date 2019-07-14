@@ -7,30 +7,46 @@
         <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
         <title>Template</title>
 
-        <script src="js/jquery-1.8.2.js"></script>
+        <script src="js/jquery-3.4.1.min.js"></script>
         <!-- Bootstrap -->
         <!-- for develop -->
-        <link href="bootstrap/css/bootstrap.css" rel="stylesheet"/>
-        <script src="bootstrap/js/bootstrap.js"></script>
+        <!-- <link href="css/bootstrap.css" rel="stylesheet"/> -->
+        <!-- <script src="js/bootstrap.js"></script> -->
         <!-- for release -->
-        <!-- <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-        <script src="bootstrap/js/bootstrap.min.js"></script> -->
+        <!-- <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="js/bootstrap.min.js"></script> -->
 
         <link href="css/pegasus.css" rel="stylesheet"/>
         <script src="js/pegasus.js"></script>
 
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+
     </head>
     <body>
-        <header class="pgs-header">
-            <div class="pgs-logo">
-                <img src="fonts/pgs.png" alt="pgs_logo" width="40" height="40">
-            </div>
-            <div class="pgs-title">
-                <span style="color: rgb(255, 255, 255); font-size: 16px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><b>PEGASUS</b> LITE</span>
+        <header class="pgs-header pgs-layout-with-complete-sidebar">
+            <div class="pgs-nav">
+                
             </div>
         </header>
         <div class="pgs-sidebar pgs-sidebar-complete">
-            <a class="pgs-toggle-sidebar pgs-no-text-decoration"><i class="glyphicon glyphicon-chevron-left"></i></a>
+            <div class="pgs-logo-container">
+                <div class="pgs-logo-image">
+                    <img src="fonts/pgs.png" alt="pgs_logo" width="40" height="40">
+                </div>
+                <div class="pgs-logo-title pgs-logo-title-with-complete-sidebar">
+                    <span style="color: rgb(255, 255, 255); font-size: 16px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><b>PEGASUS</b> lite</span>
+                </div>
+            </div>
+            <div class="pgs-menu-container">
+                <!-- <ul>
+                    <li>
+                        <a><span>测试菜单</span></a>
+                    </li>
+                </ul> -->
+            </div>
+            <div class="pgs-toggle-sidebar-container">
+                <a class="pgs-toggle-sidebar pgs-no-text-decoration"><i class="fa fa-navicon"></i></a>
+            </div>
         </div>
         <div class="pgs-layout pgs-layout-with-complete-sidebar">
             <div class="pgs-content-wrapper">
@@ -39,9 +55,9 @@
                 </div>
             </div>
         </div>
-        <footer class="pgs-footer pgs-footer-with-complete-sidebar">
+        <footer class="pgs-footer pgs-layout-with-complete-sidebar">
             <div class="pgs-copyright">
-                <span style="color: rgb(100, 100, 100)">© 2019 Pegasus Studio.&emsp;Powered by Bootstrap V3</span>
+                <span style="color: rgb(100, 100, 100)">© 2019 Pegasus Studio.</span>
             </div>
             <div class="pgs-version">
                 <span><b>Version:&nbsp;</b>0.0.1</span>

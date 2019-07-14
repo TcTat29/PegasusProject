@@ -17,6 +17,10 @@ html {
     font-weight: 500;
 }
 
+body {
+    line-height: 1.42857143;
+}
+
 .pgs-no-text-decoration {
     text-decoration: none;
 }
@@ -44,23 +48,13 @@ html {
     right: 0;
     left: 0;
     height: 40px;
+    transition: padding-left 0.3s;
+}
+
+.pgs-nav {
+    width: 100%;
+    height: 40px;
     background: rgb(65, 65, 65);
-}
-
-.pgs-logo {
-    padding-left: 5px;
-    width: 50px;
-    height: 40px;
-    float: left;
-}
-
-.pgs-title {
-    display: flex;
-    width: 170px;
-    height: 40px;
-    /* justify-content: center; */
-    align-items: center;
-    float: left;
 }
 
 .pgs-sidebar {
@@ -69,9 +63,7 @@ html {
     top: 0;
     bottom: 0;
     left: 0;
-    padding-top: 40px;
     background: rgb(240, 240, 240);
-    border-right: 1px solid rgb(210, 210, 210);
     transition: width 0.3s;
 }
 .pgs-sidebar-complete {
@@ -81,15 +73,68 @@ html {
     width: 50px;
 }
 
-.pgs-toggle-sidebar {
-    display: flex;
+.pgs-logo-container {
     position: absolute;
-    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 40px;
+    background: rgb(65, 65, 65);
+    border-right: 1px solid rgb(25, 25, 25);
+}
+
+.pgs-logo-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 5px;
+    width: 50px;
+    height: 40px;
+}
+
+.pgs-logo-title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 50px;
+    display: flex;
+    height: 40px;
+    justify-content: flex-start;
+    align-items: center;
+    white-space: nowrap;
+    transition: opacity 0.3s;
+}
+.pgs-logo-title-with-complete-sidebar {
+    opacity: 1;
+}
+.pgs-logo-title-with-lite-sidebar {
+    opacity: 0;
+}
+
+.pgs-menu-container {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    bottom: 40px;
+    left: 0;
+    border-right: 1px solid rgb(210, 210, 210);
+}
+
+.pgs-toggle-sidebar-container {
+    position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
     height: 40px;
     border-top: 1px solid rgb(210, 210, 210);
+    border-right: 1px solid rgb(210, 210, 210);
+}
+
+.pgs-toggle-sidebar {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     cursor: pointer;
     justify-content: center;
     align-items: center;
@@ -112,19 +157,13 @@ html {
     border-top: 1px solid rgb(230, 230, 230);
     transition: padding-left 0.3s;
 }
-.pgs-footer-with-complete-sidebar {
-    padding-left: 220px;
-}
-.pgs-footer-with-lite-sidebar {
-    padding-left: 50px;
-}
 
 .pgs-copyright {
     display: flex;
     width: 500px;
     height: 40px;
     padding-left: 20px;
-    justify-content: left;
+    justify-content: flex-start;
     align-items: center;
     float: left;
 }
@@ -134,7 +173,7 @@ html {
     width: 500px;
     height: 40px;
     padding-right: 20px;
-    justify-content: right;
+    justify-content: flex-end;
     align-items: center;
     float: right;
 }
