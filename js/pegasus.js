@@ -27,17 +27,31 @@ $(function () {
         }
     })
 
-    $(".pgs-menu-item").click(function(){
-        if ($(".pgs-menu-item").hasClass("menu-open")){
-
+    $(".pgs-menu-item").click(function () {
+        var e = this;
+        if ($(e).hasClass("menu-open")) {
+            var h1 = $(e).height();
+            $(e).find("ul").hide();
+            var h2 = $(e).height();
+            $(e).height(h1);
+            $(e).height(h2);
+            $(e).removeClass("menu-open");
+            $(e).removeClass("menu-active");
+            setTimeout(function () {
+                $(e).removeAttr("style");
+            }, 300)
         }
         else {
-            var h1 = $(this).height();
-            $(this).find("ul").show();
-            var h2 = $(this).height();
-            $(this).height(h1);
-            $(this).height(h2);
-            $(this).addClass("menu-open");
+            var h1 = $(e).height();
+            $(e).find("ul").show();
+            var h2 = $(e).height();
+            $(e).height(h1);
+            $(e).height(h2);
+            $(e).addClass("menu-open");
+            $(e).addClass("menu-active");
+            setTimeout(function () {
+                $(e).removeAttr("style");
+            }, 300)
         }
     })
 })
