@@ -1,5 +1,6 @@
 $(function () {
     $(".pgs-toggle-sidebar").click(function () {
+        $(".menu-open").click();
         if ($(".pgs-sidebar").hasClass("pgs-sidebar-complete")) {
             $(".pgs-sidebar").removeClass("pgs-sidebar-complete");
             $(".pgs-sidebar").addClass("pgs-sidebar-lite");
@@ -28,30 +29,31 @@ $(function () {
     })
 
     $(".pgs-menu-item").click(function () {
-        var e = this;
-        if ($(e).hasClass("menu-open")) {
-            var h1 = $(e).height();
-            $(e).find("ul").hide();
-            var h2 = $(e).height();
-            $(e).height(h1);
-            $(e).height(h2);
-            $(e).removeClass("menu-open");
-            $(e).removeClass("menu-active");
-            setTimeout(function () {
-                $(e).removeAttr("style");
-            }, 300)
-        }
-        else {
-            var h1 = $(e).height();
-            $(e).find("ul").show();
-            var h2 = $(e).height();
-            $(e).height(h1);
-            $(e).height(h2);
-            $(e).addClass("menu-open");
-            $(e).addClass("menu-active");
-            setTimeout(function () {
-                $(e).removeAttr("style");
-            }, 300)
+        if($(".pgs-sidebar").hasClass("pgs-sidebar-complete")){
+            var e = this;
+            if ($(e).hasClass("menu-open")) {
+                var h1 = $(e).height();
+                $(e).find("ul").hide();
+                var h2 = $(e).height();
+                $(e).height(h1);
+                $(e).height(h2);
+                $(e).removeClass("menu-open");
+                $(e).removeClass("menu-active");
+                setTimeout(function () {
+                    $(e).removeAttr("style");
+                }, 300)
+            } else {
+                var h1 = $(e).height();
+                $(e).find("ul").show();
+                var h2 = $(e).height();
+                $(e).height(h1);
+                $(e).height(h2);
+                $(e).addClass("menu-open");
+                $(e).addClass("menu-active");
+                setTimeout(function () {
+                    $(e).removeAttr("style");
+                }, 300)
+            }
         }
     })
 })
