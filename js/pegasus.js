@@ -12,6 +12,7 @@ $(function () {
             $(".pgs-footer").addClass("pgs-layout-with-lite-sidebar");
             $(".pgs-logo-title").removeClass("pgs-logo-title-with-complete-sidebar");
             $(".pgs-logo-title").addClass("pgs-logo-title-with-lite-sidebar");
+            alert(1);
             // $(".pgs-toggle-sidebar").find("i").addClass("fa-rotate-180");
         } else {
             $(".pgs-sidebar").removeClass("pgs-sidebar-lite");
