@@ -26,4 +26,18 @@ $(function () {
             // $(".pgs-toggle-sidebar").find("i").removeClass("fa-rotate-180");
         }
     })
+
+    $(".pgs-menu-item").click(function(){
+        if ($(".pgs-menu-item").hasClass("menu-open")){
+
+        }
+        else {
+            var h1 = $(this).height();
+            $(this).find("ul").show();
+            var h2 = $(this).height();
+            $(this).height(h1);
+            $(this).height(h2);
+            $(this).addClass("menu-open");
+        }
+    })
 })

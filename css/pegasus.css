@@ -121,21 +121,40 @@ body {
     border-right: 1px solid rgb(210, 210, 210);
 }
 
-ul.pgs-menu {
+ul.pgs-menu,ul.pgs-child-menu {
     white-space: nowrap;
     overflow: hidden;
     list-style: none;
     margin: 0;
     padding: 0;
 }
+ul.pgs-menu > li {
+    position: relative;
+    background: rgb(240, 240, 240);
+}
 ul.pgs-menu > li.pgs-menu-header {
     padding: 8px 0 8px 0;
 }
-ul.pgs-menu > li:not(.pgs-menu-header) {
+ul.pgs-menu > li.pgs-menu-item {
     padding: 10px 0 10px 0;
+    overflow: hidden;
     cursor: pointer;
+    transition: height 0.3s;
 }
-ul.pgs-menu > li:not(.pgs-menu-header):hover {
+ul.pgs-menu > li.pgs-menu-item:hover {
+    background: rgba(100, 100, 100, 0.2)
+}
+ul.pgs-menu > li.menu-active::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 5px;
+    background: rgb(230, 100, 30);
+}
+ul.pgs-menu > li.menu-open {
     background: rgba(100, 100, 100, 0.2)
 }
 ul.pgs-menu > li > a {
@@ -146,6 +165,30 @@ ul.pgs-menu > li > a:hover {
     color: rgb(35, 35, 35);
 }
 ul.pgs-menu > li > a > i {
+    display: inline-flex;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+}
+ul.pgs-child-menu {
+    display: none;
+    position: relative;
+    top: 10px;
+}
+ul.pgs-child-menu > li {
+    position: relative;
+    padding: 10px 0 10px 10px;
+    background: rgb(225, 225, 225);
+    cursor: pointer;
+}
+ul.pgs-child-menu > li > a {
+    text-decoration: none;
+    color: rgb(100, 100, 100);
+}
+ul.pgs-child-menu > li > a:hover {
+    color: rgb(35, 35, 35);
+}
+ul.pgs-child-menu > li > a > i {
     display: inline-flex;
     width: 50px;
     justify-content: center;
