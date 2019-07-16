@@ -1,4 +1,8 @@
 $(function () {
+    $(".pgs-child-menu").each(function(){
+        $(this).parent().children("a").append('<span class="pgs-menu-item-status"><i class="fa fa-angle-right"></i></span>');
+    })
+
     $(".pgs-toggle-sidebar").click(function () {
         $(".menu-open").click();
         if ($(".pgs-sidebar").hasClass("pgs-sidebar-complete")) {
@@ -46,6 +50,7 @@ $(function () {
                     $(e).removeAttr("style");
                 }, 300)
             } else {
+                $(".menu-open").click();
                 var h1 = $(e).height();
                 $(e).find("ul").show();
                 var h2 = $(e).height();

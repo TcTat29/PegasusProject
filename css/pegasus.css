@@ -130,7 +130,7 @@ ul.pgs-menu,ul.pgs-child-menu {
 }
 ul.pgs-menu > li {
     position: relative;
-    background: rgb(240, 240, 240);
+    /* background: rgb(240, 240, 240); */
 }
 ul.pgs-menu > li.pgs-menu-header {
     padding: 8px 0 8px 0;
@@ -151,7 +151,7 @@ ul.pgs-menu > li.menu-active::after {
     top: 0;
     bottom: 0;
     left: 0;
-    width: 5px;
+    width: 4px;
     background: rgb(10, 170, 250);
 }
 ul.pgs-menu > li.menu-open {
