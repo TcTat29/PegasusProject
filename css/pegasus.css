@@ -114,6 +114,7 @@ body {
 
 .pgs-menu-container {
     position: absolute;
+    z-index: 901;
     top: 40px;
     right: 0;
     bottom: 40px;
@@ -123,10 +124,12 @@ body {
 
 ul.pgs-menu,ul.pgs-child-menu {
     white-space: nowrap;
-    overflow: hidden;
     list-style: none;
     margin: 0;
     padding: 0;
+}
+ul.pgs-menu-with-complete-sidebar {
+    overflow: hidden;
 }
 ul.pgs-menu > li {
     position: relative;
@@ -137,7 +140,7 @@ ul.pgs-menu > li.pgs-menu-header {
 }
 ul.pgs-menu > li.pgs-menu-item {
     padding: 10px 0 10px 0;
-    overflow: hidden;
+    overflow: inherit;
     cursor: pointer;
     transition: height 0.3s;
 }
@@ -204,6 +207,20 @@ ul.pgs-child-menu > li > a > i {
     justify-content: center;
     align-items: center;
 }
+.pgs-sidebar-complete ul.pgs-menu {
+    overflow: hidden;
+}
+.pgs-sidebar-complete ul.pgs-menu > li.pgs-menu-item {
+    overflow: hidden;
+}
+
+/* .pgs-sidebar-lite .pgs-menu > .pgs-menu-item > .pgs-child-menu {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 170px;
+} */
 
 .pgs-toggle-sidebar-container {
     position: absolute;
