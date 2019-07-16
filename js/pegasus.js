@@ -1,5 +1,5 @@
 $(function () {
-    $(".pgs-child-menu").each(function(){
+    $(".pgs-child-menu").each(function () {
         $(this).parent().children("a").append('<span class="pgs-menu-item-status"><i class="fa fa-angle-right"></i></span>');
     })
 
@@ -19,7 +19,9 @@ $(function () {
             setTimeout(function () {
                 $(".pgs-menu-item-text").hide();
                 $(".pgs-menu").removeClass("pgs-menu-with-complete-sidebar");
-            },300)
+                $(".pgs-child-menu").removeClass("pgs-child-menu-with-complete-sidebar");
+                $(".pgs-child-menu").addClass("pgs-child-menu-with-lite-sidebar");
+            }, 300)
             $(".pgs-menu-item-status").hide();
         } else {
             $(".pgs-sidebar").removeClass("pgs-sidebar-lite");
@@ -34,9 +36,11 @@ $(function () {
             $(".pgs-logo-title").addClass("pgs-logo-title-with-complete-sidebar");
             $(".pgs-menu").addClass("pgs-menu-with-complete-sidebar");
             $(".pgs-menu-item-text").show();
+            $(".pgs-child-menu").removeClass("pgs-child-menu-with-lite-sidebar");
+            $(".pgs-child-menu").addClass("pgs-child-menu-with-complete-sidebar");
             setTimeout(function () {
                 $(".pgs-menu-item-status").show();
-            },300)
+            }, 300)
         }
     })
 
@@ -45,9 +49,9 @@ $(function () {
             var e = this;
             if ($(e).hasClass("menu-open")) {
                 var h1 = $(e).height();
-                $(e).find("ul").hide();
+                $(e).find("ul.pgs-child-menu").hide();
                 var h2 = $(e).height();
-                $(e).find("ul").show();
+                $(e).find("ul.pgs-child-menu").show();
                 $(e).height(h1);
                 $(e).height(h2);
                 $(e).removeClass("menu-open");
@@ -60,7 +64,7 @@ $(function () {
             } else {
                 $(".menu-open").click();
                 var h1 = $(e).height();
-                $(e).find("ul").show();
+                $(e).find("ul.pgs-child-menu").show();
                 var h2 = $(e).height();
                 $(e).height(h1);
                 $(e).height(h2);
@@ -72,5 +76,15 @@ $(function () {
                 }, 300)
             }
         }
+    })
+
+    $(".pgs-menu-item").hover(function () {
+        if ($(".pgs-sidebar").hasClass("pgs-sidebar-lite")) {
+            var e = this;
+            $(e).children(".pgs-child-menu").addClass("pgs-child-menu-with-lite-sidebar-open");
+        }
+    }, function () {
+        var e = this;
+        $(e).children(".pgs-child-menu").removeClass("pgs-child-menu-with-lite-sidebar-open");
     })
 })
