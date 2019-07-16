@@ -152,16 +152,19 @@ ul.pgs-menu > li.menu-active::after {
     bottom: 0;
     left: 0;
     width: 5px;
-    background: rgb(230, 100, 30);
+    background: rgb(10, 170, 250);
 }
 ul.pgs-menu > li.menu-open {
-    background: rgba(100, 100, 100, 0.2)
+    background: rgba(100, 100, 100, 0.2);
 }
 ul.pgs-menu > li > a {
+    display: block;
+    position: relative;
+    width: 100%;
     text-decoration: none;
     color: rgb(100, 100, 100);
 }
-ul.pgs-menu > li > a:hover {
+ul.pgs-menu > li > a:hover,ul.pgs-menu > li.menu-open > a {
     color: rgb(35, 35, 35);
 }
 ul.pgs-menu > li > a > i {
@@ -169,6 +172,13 @@ ul.pgs-menu > li > a > i {
     width: 50px;
     justify-content: center;
     align-items: center;
+}
+ul.pgs-menu > li > a > span.pgs-menu-item-status {
+    position: absolute;
+    right: 15px;
+}
+ul.pgs-menu > li >  a > span.pgs-menu-item-status > i {
+    transition: transform 0.3s;
 }
 ul.pgs-child-menu {
     display: none;
