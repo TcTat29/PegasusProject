@@ -198,7 +198,7 @@ ul.pgs-child-menu-with-lite-sidebar {
     width: 0;
     background: rgb(250, 250, 250);
     overflow: hidden;
-    transition: width 0.3s;
+    transition: width 0.2s;
 }
 ul.pgs-child-menu-with-lite-sidebar-open {
     width: 170px;
