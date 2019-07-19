@@ -51,10 +51,54 @@ body {
     transition: padding-left 0.3s;
 }
 
-.pgs-nav {
+.pgs-nav-container {
     width: 100%;
-    height: 40px;
-    background: rgb(65, 65, 65);
+    height: 100%;
+    background: rgb(85, 85, 85);
+}
+
+.pgs-tab {
+    position: relative;
+    display: flex;
+    width: 220px;
+    height: 100%;
+    border-right: 1px solid rgb(25, 25, 25);
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+    float: left;
+}
+.pgs-tab > a {
+    display: block;
+    position: relative;
+    width: 100%;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+.pgs-tab > a > i {
+    display: inline-flex;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.pgs-tab > a > span.pgs-tab-close {
+    position: absolute;
+    right: 15px;
+}
+.pgs-tab:hover,.tab-active {
+    background: rgba(255, 255, 255, 0.1);
+}
+.tab-active::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    /* background: -webkit-linear-gradient(bottom, rgba(10, 170, 250, 1) 0%,rgba(10, 170, 250, 0) 100%); */
+    background: rgba(10, 170, 250, 1);
 }
 
 .pgs-sidebar {

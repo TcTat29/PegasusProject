@@ -87,4 +87,22 @@ $(function () {
         var e = this;
         $(e).children(".pgs-child-menu").removeClass("pgs-child-menu-with-lite-sidebar-open");
     })
+
+    $(".pgs-tab").click(function(){
+        var e = this;
+        if ($(e).hasClass("tab-active")) {
+            $(e).removeClass("tab-active");
+        } else {
+            $(".tab-active").click();
+            $(e).addClass("tab-active");
+        }
+    })
+
+    $(".fa-refresh").click(function(){
+        var e = this;
+        $(e).addClass("fa-spin");
+        setTimeout(function () {
+            $(e).removeClass("fa-spin");
+        }, 5000)
+    })
 })
