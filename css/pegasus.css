@@ -84,7 +84,19 @@ body {
 }
 .pgs-tab > a > span.pgs-tab-close {
     position: absolute;
-    right: 15px;
+    width: 20px;
+    height: 20px;
+    right: 10px;
+    border-radius: 2px;
+}
+.pgs-tab > a > span.pgs-tab-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+.pgs-tab > a > span.pgs-tab-close > i {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 .pgs-tab:hover,.tab-active {
     background: rgba(255, 255, 255, 0.1);
