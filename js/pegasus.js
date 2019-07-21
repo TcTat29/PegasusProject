@@ -130,6 +130,9 @@ $(function () {
         var functionName = $(el).parent().children('.pgs-tab-text').text();
         var functionUrl = $(el).parent().attr('href');
         if (setSessionFunction(functionName, functionUrl, 'remove')) {
+            if($(el).parents('.pgs-tab').hasClass('tab-active')){
+                $('.pgs-tab:not(.tab-active):last').click();
+            }
             $(el).parents('.pgs-tab').remove();
         }
     })
@@ -143,8 +146,11 @@ $(function () {
     })
 
     function addTab(functionName, functionUrl, active) {
-        $('.tab-active').click();
-        var activeClass = active ? ' tab-active' : ' ';
+        var activeClass='';
+        if(active) {
+            $('.tab-active').removeClass('tab-active');
+            activeClass=' tab-active';
+        }
         $('.pgs-nav-container').append('<div class="pgs-tab ' + activeClass + '"><a href="'
             + functionUrl + '"><i class="fa fa-refresh"></i><span class="pgs-tab-text">'
             + functionName + '</span><span class="pgs-tab-close"><i class="fa fa-remove"></i></span></a></div>');
